@@ -48,7 +48,7 @@
                         <configuration>
                             <toolchains>
                                 <jdk>
-                                    <version>1.6</version>
+                                    <version>${xugu.java}</version>
                                 </jdk>
                             </toolchains>
                         </configuration>
