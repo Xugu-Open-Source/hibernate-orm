@@ -67,7 +67,7 @@ public class XuguDialect4 extends Dialect {
 	//registerColumnType(com.xugu.jdbc.Types.IMAGE, "IMAGE");
 	registerColumnType(Types.CLOB, "CLOB"); 
 	registerColumnType(Types.BOOLEAN, "BOOLEAN"); 
-	//------------------------------- ÊıÖµº¯Êı-------------------------
+	//------------------------------- æ•°å€¼å‡½æ•°-------------------------
 	registerFunction("bin", new StandardSQLFunction("bin",StandardBasicTypes.BINARY)); 
 	registerFunction("hex", new StandardSQLFunction("hex",StandardBasicTypes.CHARACTER)); 
 	registerFunction("to_char", new StandardSQLFunction("to_char",StandardBasicTypes.STRING)); 
@@ -96,9 +96,9 @@ public class XuguDialect4 extends Dialect {
 	registerFunction("isnull", new StandardSQLFunction("isnull",StandardBasicTypes.BOOLEAN)); 
 	registerFunction("notnull", new StandardSQLFunction("notnull",StandardBasicTypes.BOOLEAN));
 	
-	//×Ö·û´®º¯Êı registerFunction("ascii", new StandardSQLFunction(StandardBasicTypes.INTEGER)); registerFunction("bit_length", new StandardSQLFunction( StandardBasicTypes.LONG)); registerFunction("char", new StandardSQLFunction( StandardBasicTypes.CHARACTER)); registerFunction("char_length", new StandardSQLFunction( StandardBasicTypes.LONG)); registerFunction("character_length", new StandardSQLFunction(StandardBasicTypes.LONG)); registerFunction("chr", new StandardSQLFunction(StandardBasicTypes.CHARACTER)); registerFunction("concat", new StandardSQLFunction(StandardBasicTypes.STRING)); registerFunction("difference", new StandardSQLFunction(
+	//å­—ç¬¦ä¸²å‡½æ•° registerFunction("ascii", new StandardSQLFunction(StandardBasicTypes.INTEGER)); registerFunction("bit_length", new StandardSQLFunction( StandardBasicTypes.LONG)); registerFunction("char", new StandardSQLFunction( StandardBasicTypes.CHARACTER)); registerFunction("char_length", new StandardSQLFunction( StandardBasicTypes.LONG)); registerFunction("character_length", new StandardSQLFunction(StandardBasicTypes.LONG)); registerFunction("chr", new StandardSQLFunction(StandardBasicTypes.CHARACTER)); registerFunction("concat", new StandardSQLFunction(StandardBasicTypes.STRING)); registerFunction("difference", new StandardSQLFunction(
 	
-	//-----------------------ÊıÖµÊı¾İÀàĞÍµÄ¾ÛºÏº¯Êı--------------------
+	//-----------------------æ•°å€¼æ•°æ®ç±»å‹çš„èšåˆå‡½æ•°--------------------
 	
 	registerFunction("var", new StandardSQLFunction("var"));
 	registerFunction("stddev", new StandardSQLFunction("stddev"));
@@ -109,7 +109,7 @@ public class XuguDialect4 extends Dialect {
 	registerFunction("avg", new StandardSQLFunction("avg"));
 	registerFunction("sum", new StandardSQLFunction("sum"));
 	
-	//-------------------×Ö·ûÊı¾İÀàĞÍº¯Êı----------
+	//-------------------å­—ç¬¦æ•°æ®ç±»å‹å‡½æ•°----------
 	
 	registerFunction("pinyin", new StandardSQLFunction("pinyin", StandardBasicTypes.STRING));
 	registerFunction("pinyin1", new StandardSQLFunction("pinyin1", StandardBasicTypes.STRING));
@@ -141,7 +141,7 @@ public class XuguDialect4 extends Dialect {
 	registerFunction("translate", new StandardSQLFunction("translate",StandardBasicTypes.STRING));
 	
 
-	//------------------------------Ê±¼ä¡¢ÈÕÆÚÊı¾İÀàĞÍº¯Êı-------------------------------------
+	//------------------------------æ—¶é—´ã€æ—¥æœŸæ•°æ®ç±»å‹å‡½æ•°-------------------------------------
 	
 	registerFunction("getyear", new StandardSQLFunction("getyear",StandardBasicTypes.INTEGER));
 	registerFunction("getmonth", new StandardSQLFunction("getmonth",StandardBasicTypes.INTEGER));
@@ -167,7 +167,7 @@ public class XuguDialect4 extends Dialect {
 	registerFunction("extract_month", new StandardSQLFunction("extract_month",StandardBasicTypes.INTEGER));
 	registerFunction("extract_year", new StandardSQLFunction("extract_year",StandardBasicTypes.INTEGER));
 	
-	//-----------------------------ÌØÊâ±í´ïÊ½---------------------------------------------------------
+	//-----------------------------ç‰¹æ®Šè¡¨è¾¾å¼---------------------------------------------------------
 	/*javax.swing.JOptionPane.showMessageDialog(null, "1111111111111111111111..... ", "aaaaaa", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 	javax.swing.JOptionPane.showMessageDialog(null, "2222222222222222222222..... ", "aaaaaa", javax.swing.JOptionPane.INFORMATION_MESSAGE);*/
 	registerFunction("count", new StandardSQLFunction("count",StandardBasicTypes.LONG)); 
@@ -197,7 +197,7 @@ public class XuguDialect4 extends Dialect {
 // public void registerColumnType(int code, String name) {
 //		super.registerColumnType(code,name);
 //	}
-//¸Ã·½·¨ÓÃÓÚÌí¼ÓSELECTÓï¾äµ½INSERTÓï¾äÖĞ,²»ÊÇºÜÈ·¶¨????????????????????????????????????//
+//è¯¥æ–¹æ³•ç”¨äºæ·»åŠ SELECTè¯­å¥åˆ°INSERTè¯­å¥ä¸­,ä¸æ˜¯å¾ˆç¡®å®š????????????????????????????????????//
  public String appendIdentitySelectToInsert(String insertString)
  {
 	 String insert_select = insertString.trim();
@@ -215,7 +215,7 @@ public class XuguDialect4 extends Dialect {
  
 
    
- //ÔÚÉ¾³ı±íÖ®Ç°ÊÇ·ñĞèÒªÏÈÉ¾³ıÔ¼Êø?
+ //åœ¨åˆ é™¤è¡¨ä¹‹å‰æ˜¯å¦éœ€è¦å…ˆåˆ é™¤çº¦æŸ?
    public boolean dropConstraints() 
    { 
 	   return false; 
@@ -230,7 +230,7 @@ public class XuguDialect4 extends Dialect {
 	}
 	
 
-//Ìá¹©Ïò±íÖĞÌí¼ÓÒ»ÁĞµÄÓï·¨×Ö·û´®
+//æä¾›å‘è¡¨ä¸­æ·»åŠ ä¸€åˆ—çš„è¯­æ³•å­—ç¬¦ä¸²
 	public String getAddColumnString() 
 	{ 
 		//throw new UnsupportedOperationException( "No add column syntax supported by Dialect"); 
@@ -239,7 +239,7 @@ public class XuguDialect4 extends Dialect {
 		
 	} 
 	
-//	Ìá¹©Ïò±íÖĞÌí¼ÓÍâ¼üÔ¼ÊøµÄÓï·¨×Ö·û´®
+//	æä¾›å‘è¡¨ä¸­æ·»åŠ å¤–é”®çº¦æŸçš„è¯­æ³•å­—ç¬¦ä¸²
 	public String getAddForeignKeyConstraintString( String constraintName, String[] foreignKey, String referencedTable, String[] primaryKey)
 	{ 
 		//return new StringBuffer(30).append(" add constraint ").append(constraintName).append(" foreign key (").append(StringHelper.join(StringHelper.COMMA_SPACE, foreignKey)).append(")references ).append(referencedTable).toString(); " +
@@ -287,7 +287,7 @@ public class XuguDialect4 extends Dialect {
 	}
 	
 
-	//	Ìá¹©´´½¨ÁÙÊ±±íµÄÓï·¨
+	//	æä¾›åˆ›å»ºä¸´æ—¶è¡¨çš„è¯­æ³•
 	public String getCreateTemporaryTableString() 
 	{
 		return "create global temporary table ";
@@ -324,7 +324,7 @@ public class XuguDialect4 extends Dialect {
 	 }
 
 
-//ÎŞ²ÎÊıµÄlimit ? offset ?Óï·¨
+//æ— å‚æ•°çš„limit ? offset ?è¯­æ³•
 public String getLimitString(String sql) {   
   StringBuffer pagingSelect = new StringBuffer(100);;   
   pagingSelect.append(sql);;   
@@ -333,8 +333,8 @@ public String getLimitString(String sql) {
 }  
 
 	 
-//		 ÊµÏÖ·ÖÒ³µÄÓï¾ä£»
-	 // Hibernate»áÊ×ÏÈ³¢ÊÔÓÃÌØ¶¨Êı¾İ¿âµÄ·ÖÒ³sql£¬Èç¹ûÃ»ÓÃ£¬ÔÙ³¢ÊÔScrollable£¬Èç¹û²»ĞĞ£¬×îºó²ÉÓÃrset.next()ÒÆ¶¯µÄ°ì·¨¡£
+//		 å®ç°åˆ†é¡µçš„è¯­å¥ï¼›
+	 // Hibernateä¼šé¦–å…ˆå°è¯•ç”¨ç‰¹å®šæ•°æ®åº“çš„åˆ†é¡µsqlï¼Œå¦‚æœæ²¡ç”¨ï¼Œå†å°è¯•Scrollableï¼Œå¦‚æœä¸è¡Œï¼Œæœ€åé‡‡ç”¨rset.next()ç§»åŠ¨çš„åŠæ³•ã€‚
 	 public String getLimitString(String sql,boolean hasOffset) 
 	 {
 		 StringBuffer seper_sql = new StringBuffer(100);
@@ -363,7 +363,7 @@ public String getLimitString(String sql) {
 		 return "select \"seq_name\" from all_sequences";
 	 }
 	 
-//²»È·¶¨£¬³öÏÖÎÊÌâÖµµÃ¼ì²â£¬£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿
+//ä¸ç¡®å®šï¼Œå‡ºç°é—®é¢˜å€¼å¾—æ£€æµ‹ï¼Œï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿ
 	  public int registerResultSetOutParameter(CallableStatement statement,int col) throws SQLException 
 	 {
 		  statement.registerOutParameter(col, Types.OTHER);
@@ -414,7 +414,7 @@ public String getLimitString(String sql) {
 		  return true;
 	  }
 	  
-//	²»Ã÷È·Ê²Ã´ÒâË¼£¬£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿/
+//	ä¸æ˜ç¡®ä»€ä¹ˆæ„æ€ï¼Œï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿ/
 	  public boolean supportsEmptyInList()
 	  {
 		  return false;
@@ -425,7 +425,7 @@ public String getLimitString(String sql) {
 		  return true;
 	  }
 	  
-//DATABASEÊÇ·ñÖ§³Ö³õÊ¼»¯ĞòÁĞÖµºÍĞòÁĞÖµµÄ²½³¤£¬£¿£¿£¿£¿£¿£¿£¿£¿£¿£¬×Ô¼ºÀí½âµÄ
+//DATABASEæ˜¯å¦æ”¯æŒåˆå§‹åŒ–åºåˆ—å€¼å’Œåºåˆ—å€¼çš„æ­¥é•¿ï¼Œï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Œè‡ªå·±ç†è§£çš„
 	  public boolean supportsPooledSequences() 
 	  {
 		  return true;
@@ -454,7 +454,7 @@ public String getLimitString(String sql) {
 			
 		}
 //orcale end;  
-//2009-7-6 cao Ìí¼Ó MYSQLÔÚDIALECTÖĞÖØĞ´µÄ·½·¨
+//2009-7-6 cao æ·»åŠ  MYSQLåœ¨DIALECTä¸­é‡å†™çš„æ–¹æ³•
 	  public String getIdentityColumnString() 
 	  {
 		  return "identity(1,1)";
@@ -466,7 +466,7 @@ public String getLimitString(String sql) {
 	  }
 	  
 	   
-//ÊÇ·ñĞèÒªÔÚË÷ÒıÃû×ÖÇ°ÏŞ¶¨Ä£Ê½Ãû
+//æ˜¯å¦éœ€è¦åœ¨ç´¢å¼•åå­—å‰é™å®šæ¨¡å¼å
 	  public boolean qualifyIndexName() 
 	  {
 		  return false;
@@ -494,7 +494,7 @@ public String getLimitString(String sql) {
 	 
 //end mysql;
 	  
-//ÏÂÃæÊÇ¶Á¹æ·¶,ÕÒµ½µÄÒ»Ğ©ĞèÒªÖØĞ´µÄ·½·¨
+//ä¸‹é¢æ˜¯è¯»è§„èŒƒ,æ‰¾åˆ°çš„ä¸€äº›éœ€è¦é‡å†™çš„æ–¹æ³•
 	  public String generateTemporaryTableName(String baseTableName) 
 	  {
 		  return baseTableName.trim();
@@ -507,7 +507,7 @@ public String getLimitString(String sql) {
 		 
 	  }
 	  
-//Õâ¸ö²»ÊÇÊ®·ÖÈ·¶¨,The keyword used to specify a nullable column.
+//è¿™ä¸ªä¸æ˜¯ååˆ†ç¡®å®š,The keyword used to specify a nullable column.
 	/*  public String getNullColumnString() 
 	  {
 		  return "null";
@@ -540,7 +540,7 @@ public String getLimitString(String sql) {
 	    	
 	  } 
 	  
-//Ä¿Ç°·şÎñÆ÷ÔİÊ±²»Ö§³ÖÔÚPreparedStatementÖĞÔ¤´¦Àílimit ? offset ?Óï·¨
+//ç›®å‰æœåŠ¡å™¨æš‚æ—¶ä¸æ”¯æŒåœ¨PreparedStatementä¸­é¢„å¤„ç†limit ? offset ?è¯­æ³•
 	  public boolean supportsVariableLimit() 
 	  {
 		return false;
